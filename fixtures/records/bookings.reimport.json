@@ -1,0 +1,7 @@
+[
+  { "booking_id": "B-2001", "lead_id": "L-1001", "entry_brand": "north-brand", "performing_brand": "north-brand", "status": "booked",    "amount": 1840.00, "currency": "USD", "at": "2026-09-04T14:00:00Z" },
+  { "booking_id": "B-2002", "lead_id": "L-1003", "entry_brand": "south-brand", "performing_brand": "north-brand", "status": "booked",    "amount": 3120.50, "currency": "USD", "at": "2026-09-05T09:30:00Z" },
+  { "booking_id": "B-2003", "lead_id": "L-1004", "entry_brand": "south-brand", "performing_brand": "south-brand", "status": "quote",     "amount": 2200.00, "currency": "USD", "at": "2026-09-05T16:45:00Z" },
+  { "booking_id": "B-2004", "lead_id": "L-1005", "entry_brand": "west-brand",  "performing_brand": "west-brand",  "status": "cancelled", "amount": 1450.00, "currency": "USD", "at": "2026-09-06T08:20:00Z" },
+  { "booking_id": "B-2005", "lead_id": null,     "entry_brand": "north-brand", "performing_brand": "north-brand", "status": "booked",    "amount": 980.00,  "currency": "USD", "at": "2026-09-06T12:05:00Z" }
+]

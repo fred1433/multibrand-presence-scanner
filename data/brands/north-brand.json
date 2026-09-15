@@ -1,0 +1,183 @@
+{
+  "slug": "north-brand",
+  "name": "North Brand Movers",
+  "market": "Testville, MA",
+  "url": "http://127.0.0.1:8123/north-brand/index.html",
+  "scanned_at": "2026-09-15T14:50:56.555Z",
+  "scanner_version": "2.0.0",
+  "state": "observed",
+  "pages": [
+    {
+      "requested_url": "http://127.0.0.1:8123/north-brand/index.html",
+      "url": "http://127.0.0.1:8123/north-brand/index.html",
+      "status": 200,
+      "redirect_chain": [
+        {
+          "url": "http://127.0.0.1:8123/north-brand/index.html",
+          "status": 200,
+          "ms": 25
+        }
+      ],
+      "bytes": 1028,
+      "source": "html as served",
+      "visible_text_chars": 240,
+      "fetched_at": "2026-09-15T14:50:56.582Z",
+      "note": "The served HTML carries almost no text, so this page builds itself in the browser. It was read without one in this run."
+    },
+    {
+      "requested_url": "http://127.0.0.1:8123/contact/",
+      "url": "http://127.0.0.1:8123/contact/",
+      "status": 404,
+      "redirect_chain": [
+        {
+          "url": "http://127.0.0.1:8123/contact/",
+          "status": 404,
+          "ms": 3
+        }
+      ],
+      "bytes": 39,
+      "source": "html as served",
+      "visible_text_chars": 9,
+      "fetched_at": "2026-09-15T14:50:56.586Z",
+      "note": "The served HTML carries almost no text, so this page builds itself in the browser. It was read without one in this run."
+    }
+  ],
+  "pages_scanned": 2,
+  "tags": {
+    "ga4": {
+      "id": "ga4",
+      "label": "Google Analytics 4 measurement ID",
+      "category": "measurement",
+      "historical": false,
+      "ids": [
+        "G-NORTH12345"
+      ],
+      "findings": [
+        {
+          "value": "G-NORTH12345",
+          "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+          "method": "html",
+          "snippet": "…async src=\"https://www.googletagmanager.com/gtag/js?id=G-NORTH12345\"></script> <script>window.dataLayer=window.dataLayer||…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/north-brand/index.html"
+      ]
+    },
+    "gtm": {
+      "id": "gtm",
+      "label": "Tag Manager container",
+      "category": "measurement",
+      "historical": false,
+      "ids": [
+        "GTM-NORTH01"
+      ],
+      "findings": [
+        {
+          "value": "GTM-NORTH01",
+          "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+          "method": "html",
+          "snippet": "…on(w,d,s,l,i){})(window,document,'script','dataLayer','GTM-NORTH01');</script> <script src=\"//cdn.callrail.com/companies/…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/north-brand/index.html"
+      ]
+    },
+    "google_ads": {
+      "id": "google_ads",
+      "label": "Google Ads measurement ID",
+      "category": "measurement",
+      "historical": false,
+      "ids": [
+        "AW-111111111"
+      ],
+      "findings": [
+        {
+          "value": "AW-111111111",
+          "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+          "method": "html",
+          "snippet": "…uments);} gtag('config','G-NORTH12345');gtag('config','AW-111111111');</script> <script>(function(w,d,s,l,i){})(window,doc…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/north-brand/index.html"
+      ]
+    },
+    "callrail": {
+      "id": "callrail",
+      "label": "CallRail",
+      "category": "call_handling",
+      "historical": false,
+      "ids": [
+        "111222333"
+      ],
+      "findings": [
+        {
+          "value": "111222333",
+          "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+          "method": "html",
+          "snippet": "…t','dataLayer','GTM-NORTH01');</script> <script src=\"//cdn.callrail.com/companies/111222333/aaaabbbbccccdddd/12/swap.js\"></script> </head><body> <h…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/north-brand/index.html"
+      ]
+    },
+    "gravity_forms": {
+      "id": "gravity_forms",
+      "label": "Gravity Forms",
+      "category": "form",
+      "historical": false,
+      "ids": [
+        "Gravity Forms"
+      ],
+      "findings": [
+        {
+          "value": "Gravity Forms",
+          "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+          "method": "html",
+          "snippet": "…p>10 Invented Way, Testville, MA 02100</p> <div class=\"gform_wrapper\"><form action=\"/quote\"><input name=\"name\"><button>Get…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/north-brand/index.html"
+      ]
+    }
+  },
+  "nap": {
+    "phones": [
+      {
+        "value": "(555) 020-0001",
+        "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+        "method": "tel: link",
+        "snippet": "…ercise this scanner. Nothing here is real.</p> <p>Call <a href=\"tel:1-555-020-0001\">(555) 020-0001</a> or use the form.</p> <p>10 Invented…",
+        "click_to_call": true
+      }
+    ],
+    "addresses": [
+      {
+        "value": "10 Invented Way, Testville, MA 02100",
+        "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+        "method": "visible text",
+        "snippet": "…ing here is real. Call (555) 020-0001 or use the form. 10 Invented Way, Testville, MA 02100 Get a quote Contact Find us on the map",
+        "parts": {
+          "street": "10 Invented Way",
+          "locality": "Testville",
+          "region": "MA",
+          "postal_code": "02100"
+        }
+      }
+    ]
+  },
+  "profile_links": {
+    "google_listing": [
+      {
+        "value": "https://www.google.com/maps?cid=1111111111111111111",
+        "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+        "method": "link published on the brand site",
+        "snippet": "…</form></div> <a href=\"/contact/\">Contact</a> <a href=\"https://www.google.com/maps?cid=1111111111111111111\">Find us on the map</a> </body></html>"
+      }
+    ]
+  }
+}

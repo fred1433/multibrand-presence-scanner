@@ -1,0 +1,31 @@
+{
+  "name": "multibrand-presence-scanner",
+  "version": "2.0.0",
+  "description": "Reads a small, representative set of public pages per brand and writes what it observed in five states, then reconciles leads to bookings over fictional records so the rules can be replayed and checked.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "demo": "node scripts/demo.mjs",
+    "scan": "node src/cli.js",
+    "reconcile": "node src/pipeline/cli.js",
+    "test": "node --test test/*.test.js"
+  },
+  "optionalDependencies": {
+    "playwright": "^1.63.0"
+  },
+  "files": [
+    "src",
+    "scripts",
+    "fixtures",
+    "example-brands.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fred1433/multibrand-presence-scanner.git"
+  }
+}

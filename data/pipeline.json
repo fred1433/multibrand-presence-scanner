@@ -1,0 +1,253 @@
+{
+  "what_this_is": "A lead to booking reconciliation executed over invented records, so the rules it follows can be replayed and checked. Nothing here describes any real business.",
+  "records_are_fictional": true,
+  "rules": [
+    {
+      "id": "lead_to_booking",
+      "text": "A lead becomes a booking when the booking carries that lead id."
+    },
+    {
+      "id": "reminder_is_not_a_lead",
+      "text": "A follow-up or reminder call attaches to the lead it belongs to and never opens a new one."
+    },
+    {
+      "id": "reimport_is_idempotent",
+      "text": "Re-importing the same records changes no total, and a record that changed is reported as a conflict."
+    },
+    {
+      "id": "no_proof_stays_unattributed",
+      "text": "A booking with no key back to a lead stays unattributed and stays visible."
+    },
+    {
+      "id": "multibrand_counts_once",
+      "text": "A booking entered by one brand and performed by another keeps both dimensions and counts once in the group total."
+    }
+  ],
+  "run": {
+    "rules": [
+      {
+        "id": "lead_to_booking",
+        "text": "A lead becomes a booking when the booking carries that lead id."
+      },
+      {
+        "id": "reminder_is_not_a_lead",
+        "text": "A follow-up or reminder call attaches to the lead it belongs to and never opens a new one."
+      },
+      {
+        "id": "reimport_is_idempotent",
+        "text": "Re-importing the same records changes no total, and a record that changed is reported as a conflict."
+      },
+      {
+        "id": "no_proof_stays_unattributed",
+        "text": "A booking with no key back to a lead stays unattributed and stays visible."
+      },
+      {
+        "id": "multibrand_counts_once",
+        "text": "A booking entered by one brand and performed by another keeps both dimensions and counts once in the group total."
+      }
+    ],
+    "intake": {
+      "leads": 5,
+      "calls": 5,
+      "bookings": 5,
+      "payments": 3,
+      "records_taken": 18,
+      "duplicates_ignored": 0,
+      "conflicts": [],
+      "rejected": []
+    },
+    "calls": [
+      {
+        "call_id": "C-9001",
+        "lead_id": "L-1002",
+        "attached_by": "lead id on the call",
+        "created_a_lead": false,
+        "note": null
+      },
+      {
+        "call_id": "C-9002",
+        "lead_id": "L-1002",
+        "attached_by": "the number the lead came in on",
+        "created_a_lead": false,
+        "note": null
+      },
+      {
+        "call_id": "C-9003",
+        "lead_id": "L-1003",
+        "attached_by": "the number the lead came in on",
+        "created_a_lead": false,
+        "note": null
+      },
+      {
+        "call_id": "C-9004",
+        "lead_id": "L-1005",
+        "attached_by": "lead id on the call",
+        "created_a_lead": false,
+        "note": null
+      },
+      {
+        "call_id": "C-9005",
+        "lead_id": null,
+        "attached_by": null,
+        "created_a_lead": false,
+        "note": "No lead carries this number in the records given. The call is kept and left unattached; it does not open a lead."
+      }
+    ],
+    "bookings": [
+      {
+        "booking_id": "B-2001",
+        "status": "booked",
+        "counts_as_revenue": true,
+        "amount": 1840,
+        "entry_brand": "north-brand",
+        "performing_brand": "north-brand",
+        "multibrand": false,
+        "lead_id": "L-1001",
+        "source": {
+          "channel": "form",
+          "campaign": "local-search"
+        },
+        "attribution": "attributed by the lead id on the booking",
+        "unattributed_reason": null,
+        "paid": 1840
+      },
+      {
+        "booking_id": "B-2002",
+        "status": "booked",
+        "counts_as_revenue": true,
+        "amount": 3120.5,
+        "entry_brand": "south-brand",
+        "performing_brand": "north-brand",
+        "multibrand": true,
+        "lead_id": "L-1003",
+        "source": {
+          "channel": "form",
+          "campaign": "paid-search"
+        },
+        "attribution": "attributed by the lead id on the booking",
+        "unattributed_reason": null,
+        "paid": 3120.5
+      },
+      {
+        "booking_id": "B-2003",
+        "status": "quote",
+        "counts_as_revenue": false,
+        "amount": 2200,
+        "entry_brand": "south-brand",
+        "performing_brand": "south-brand",
+        "multibrand": false,
+        "lead_id": "L-1004",
+        "source": {
+          "channel": "chat",
+          "campaign": "local-search"
+        },
+        "attribution": "attributed by the lead id on the booking",
+        "unattributed_reason": null,
+        "paid": 0
+      },
+      {
+        "booking_id": "B-2004",
+        "status": "cancelled",
+        "counts_as_revenue": false,
+        "amount": 1450,
+        "entry_brand": "west-brand",
+        "performing_brand": "west-brand",
+        "multibrand": false,
+        "lead_id": "L-1005",
+        "source": {
+          "channel": "phone",
+          "campaign": "paid-search"
+        },
+        "attribution": "attributed by the lead id on the booking",
+        "unattributed_reason": null,
+        "paid": 0
+      },
+      {
+        "booking_id": "B-2005",
+        "status": "booked",
+        "counts_as_revenue": true,
+        "amount": 980,
+        "entry_brand": "north-brand",
+        "performing_brand": "north-brand",
+        "multibrand": false,
+        "lead_id": null,
+        "source": null,
+        "attribution": "unattributed",
+        "unattributed_reason": "The booking carries no lead id, and no link was made from a shared phone number.",
+        "paid": 980
+      }
+    ],
+    "totals": {
+      "group_revenue": 5940.5,
+      "by_entry_brand": {
+        "north-brand": 2820,
+        "south-brand": 3120.5
+      },
+      "by_performing_brand": {
+        "north-brand": 5940.5
+      },
+      "attributed_revenue": 4960.5,
+      "unattributed_revenue": 980,
+      "unattributed_bookings": [
+        "B-2005"
+      ],
+      "paid_to_date": 5940.5,
+      "excluded_by_status": [
+        {
+          "booking_id": "B-2003",
+          "status": "quote"
+        },
+        {
+          "booking_id": "B-2004",
+          "status": "cancelled"
+        }
+      ]
+    }
+  },
+  "replayed_with_the_same_records": {
+    "group_revenue": 5940.5,
+    "duplicates_ignored": 5,
+    "conflicts": 0
+  },
+  "acceptance": {
+    "checks": [
+      {
+        "id": "multibrand_counts_once",
+        "question": "Does a booking entered by one brand and performed by another count once in the group total?",
+        "expected": "the entry view and the performing view each sum to the group total",
+        "observed": "group $5,940.50, by entry brand $5,940.50, by performing brand $5,940.50",
+        "pass": true
+      },
+      {
+        "id": "reimport_is_idempotent",
+        "question": "Does importing the same records a second time move any total?",
+        "expected": "identical totals, duplicates reported rather than added",
+        "observed": "first run $5,940.50, replayed $5,940.50, 5 duplicate record(s) ignored",
+        "pass": true
+      },
+      {
+        "id": "no_proof_stays_unattributed",
+        "question": "Is a booking with no key back to a lead left unattributed and still visible?",
+        "expected": "it appears in the unattributed list and in the group total",
+        "observed": "1 unattributed booking(s) worth $980.00, listed by id",
+        "pass": true
+      },
+      {
+        "id": "reminder_is_not_a_lead",
+        "question": "Does a follow-up or reminder call ever open a lead?",
+        "expected": "no call creates a lead",
+        "observed": "5 call(s) read, 4 attached to an existing lead, 0 created",
+        "pass": true
+      },
+      {
+        "id": "amount_traces_to_source",
+        "question": "Does every amount shown trace back to the record it came from?",
+        "expected": "every booking row carries its own id and status",
+        "observed": "5 booking row(s), each with its id, status and amount",
+        "pass": true
+      }
+    ],
+    "passed": 5,
+    "of": 5
+  }
+}

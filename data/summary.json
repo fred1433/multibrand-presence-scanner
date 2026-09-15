@@ -1,0 +1,499 @@
+{
+  "group": "Invented Group (fictional)",
+  "what_this_is": "A dated reading of public pages, in five states. Each line is an observation and its limit, not a conclusion about the business.",
+  "states": [
+    "observed",
+    "not_observed_in_scope",
+    "unverified",
+    "private_access_required",
+    "collection_error"
+  ],
+  "generated_at": "2026-09-15T14:50:56.591Z",
+  "scanner_version": "2.0.0",
+  "method": "A small, representative set of public pages per brand, fetched over HTTPS and read with declared patterns. No model call, no paid data source, no crawl.",
+  "scope_note": "Three invented brands served from fixtures/sites, so the scanner can be run end to end by anyone, offline, without reading anybody's real pages.",
+  "counts": {
+    "brands_in_scope": 3,
+    "sites_read": 3,
+    "pages_read": 6,
+    "with_a_measurement_id_observed": 2,
+    "without_one_in_tested_scope": 1,
+    "with_a_historical_ua_identifier": 1,
+    "with_call_handling_observed": 1,
+    "with_a_lead_destination_observed": 0,
+    "listings_opened_from_a_published_link": 0,
+    "distinct_phone_numbers": 3,
+    "connections_not_tested": 9
+  },
+  "operating_questions": [
+    {
+      "id": "system_of_record",
+      "question": "Which system records that a move is booked, with what identifier and what amount?",
+      "why": "A quote, a booking, a cancellation and a payment are four different states. Until one system and one status are authoritative for each, a revenue figure has no single meaning.",
+      "supported_by": "The mapping shows where leads can start. It does not show which system closes them, and it cannot."
+    },
+    {
+      "id": "the_key",
+      "question": "Which key ties a lead to that booking?",
+      "why": "Acquisition source, entry brand and performing brand are three separate dimensions and have to stay separate. A number several brands publish is not a key, and joining on it would invent links.",
+      "supported_by": "The mapping lists the numbers and entry points each site publishes, which is what makes a shared number visible as a hazard rather than a shortcut."
+    },
+    {
+      "id": "spend_and_totals",
+      "question": "How is spend attached to this scope, and how are the totals checked?",
+      "why": "Spend sits in advertising accounts, bookings in the operating system. Attaching them is only meaningful once both sides reconcile to a total that can be recomputed.",
+      "supported_by": "A measurement ID on a page says a tag exists. What it spent and what it produced is in the account."
+    }
+  ],
+  "brands": [
+    {
+      "slug": "north-brand",
+      "name": "North Brand Movers",
+      "market": "Testville, MA",
+      "url": "http://127.0.0.1:8123/north-brand/index.html",
+      "site": "http://127.0.0.1:8123/north-brand/index.html",
+      "state": "observed",
+      "scanned_at": "2026-09-15T14:50:56.555Z",
+      "pages_scanned": 2,
+      "read_as": "html as served",
+      "establishments": {
+        "state": "observed",
+        "postal_addresses": [
+          "10 Invented Way, Testville, MA 02100"
+        ],
+        "sites": [
+          "http://127.0.0.1:8123/north-brand/index.html"
+        ],
+        "note": "Postal addresses printed on the pages read. How many establishments the brand operates is not decidable from these pages."
+      },
+      "lead_entry_points": {
+        "state": "observed",
+        "kinds": [
+          "form",
+          "phone"
+        ],
+        "forms": [
+          "Gravity Forms"
+        ],
+        "chat": [],
+        "phone_numbers": [
+          "(555) 020-0001"
+        ],
+        "summary": "form, phone",
+        "note": "The ways a lead can start on the pages read. Each one has to be followed to the system that receives it."
+      },
+      "measurement": {
+        "state": "observed",
+        "observed": [
+          {
+            "kind": "Google Analytics 4",
+            "ids": [
+              "G-NORTH12345"
+            ]
+          },
+          {
+            "kind": "Tag Manager",
+            "ids": [
+              "GTM-NORTH01"
+            ]
+          },
+          {
+            "kind": "Google Ads",
+            "ids": [
+              "AW-111111111"
+            ]
+          }
+        ],
+        "summary": "Google Analytics 4, Tag Manager, Google Ads",
+        "note": "These identifiers are present in the pages as served. Whether each one fires, and which property it reports to, is settled in the accounts."
+      },
+      "call_handling": {
+        "state": "observed",
+        "tools": [
+          "CallRail"
+        ],
+        "note": "A call handling script is present in the pages read.",
+        "next": "Confirm which numbers it swaps, and where the call record lands.",
+        "access": "private_access_required"
+      },
+      "lead_destination": {
+        "state": "unverified",
+        "tools": [],
+        "note": "Where a submitted form lands is not visible from a page: the destination is set on the server or inside the form plugin.",
+        "next": "Confirm the destination of each form, and the field that would carry the source.",
+        "access": "private_access_required"
+      },
+      "google_listing": {
+        "state": "unverified",
+        "published_links": [
+          "https://www.google.com/maps?cid=1111111111111111111"
+        ],
+        "listings": [],
+        "note": "The site publishes a link to a listing; it was not opened in this run.",
+        "next": "Confirm the listings each establishment owns, from the business profile account."
+      },
+      "local_services_ads": {
+        "state": "private_access_required",
+        "note": "Whether a brand runs Local Services Ads, and what those leads cost, is readable in the advertising account. A public page does not carry it.",
+        "next": "Read-only access to the advertising account for one brand."
+      },
+      "link_to_verify": [
+        {
+          "id": "gtm_fires",
+          "short": "Container observed: which tags does it fire?",
+          "text": "Tag Manager container observed (GTM-NORTH01). Which tags it fires is to verify in the container."
+        },
+        {
+          "id": "form_path",
+          "short": "Where does a submitted form go?",
+          "text": "Form destination not visible from the page. Confirm where a submitted form goes."
+        },
+        {
+          "id": "ads_id",
+          "short": "Ads ID on the page, which is not an observed ad",
+          "text": "Google Ads measurement ID observed. That is a tag on the page, not an observation of a live ad."
+        }
+      ],
+      "next_check": {
+        "short": "Confirm destinations in the accounts",
+        "text": "Confirm destinations in the accounts that own these identifiers.",
+        "access": "read-only access"
+      },
+      "evidence": {
+        "ga4": [
+          {
+            "value": "G-NORTH12345",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "html",
+            "snippet": "…async src=\"https://www.googletagmanager.com/gtag/js?id=G-NORTH12345\"></script> <script>window.dataLayer=window.dataLayer||…"
+          }
+        ],
+        "universal_analytics": [],
+        "gtm": [
+          {
+            "value": "GTM-NORTH01",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "html",
+            "snippet": "…on(w,d,s,l,i){})(window,document,'script','dataLayer','GTM-NORTH01');</script> <script src=\"//cdn.callrail.com/companies/…"
+          }
+        ],
+        "google_ads": [
+          {
+            "value": "AW-111111111",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "html",
+            "snippet": "…uments);} gtag('config','G-NORTH12345');gtag('config','AW-111111111');</script> <script>(function(w,d,s,l,i){})(window,doc…"
+          }
+        ],
+        "call_handling": [
+          {
+            "value": "111222333",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "html",
+            "snippet": "…t','dataLayer','GTM-NORTH01');</script> <script src=\"//cdn.callrail.com/companies/111222333/aaaabbbbccccdddd/12/swap.js\"></script> </head><body> <h…"
+          }
+        ],
+        "forms": [
+          {
+            "value": "Gravity Forms",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "html",
+            "snippet": "…p>10 Invented Way, Testville, MA 02100</p> <div class=\"gform_wrapper\"><form action=\"/quote\"><input name=\"name\"><button>Get…"
+          }
+        ],
+        "lead_destination": [],
+        "chat": [],
+        "phones": [
+          {
+            "value": "(555) 020-0001",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "tel: link",
+            "snippet": "…ercise this scanner. Nothing here is real.</p> <p>Call <a href=\"tel:1-555-020-0001\">(555) 020-0001</a> or use the form.</p> <p>10 Invented…",
+            "click_to_call": true
+          }
+        ],
+        "addresses": [
+          {
+            "value": "10 Invented Way, Testville, MA 02100",
+            "evidence_url": "http://127.0.0.1:8123/north-brand/index.html",
+            "method": "visible text",
+            "snippet": "…ing here is real. Call (555) 020-0001 or use the form. 10 Invented Way, Testville, MA 02100 Get a quote Contact Find us on the map",
+            "parts": {
+              "street": "10 Invented Way",
+              "locality": "Testville",
+              "region": "MA",
+              "postal_code": "02100"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "south-brand",
+      "name": "South Brand Moving and Storage",
+      "market": "Testville, MA",
+      "url": "http://127.0.0.1:8123/south-brand/index.html",
+      "site": "http://127.0.0.1:8123/south-brand/index.html",
+      "state": "observed",
+      "scanned_at": "2026-09-15T14:50:56.572Z",
+      "pages_scanned": 2,
+      "read_as": "html as served",
+      "establishments": {
+        "state": "observed",
+        "postal_addresses": [
+          "7 Example Street, Testville, MA 02102"
+        ],
+        "sites": [
+          "http://127.0.0.1:8123/south-brand/index.html"
+        ],
+        "note": "Postal addresses printed on the pages read. How many establishments the brand operates is not decidable from these pages."
+      },
+      "lead_entry_points": {
+        "state": "observed",
+        "kinds": [
+          "form",
+          "phone"
+        ],
+        "forms": [
+          "Contact Form 7"
+        ],
+        "chat": [],
+        "phone_numbers": [
+          "(555) 020-0002"
+        ],
+        "summary": "form, phone",
+        "note": "The ways a lead can start on the pages read. Each one has to be followed to the system that receives it."
+      },
+      "measurement": {
+        "state": "observed",
+        "observed": [
+          {
+            "kind": "Universal Analytics",
+            "ids": [
+              "UA-7654321-9"
+            ],
+            "historical": true
+          }
+        ],
+        "summary": "Universal Analytics",
+        "note": "These identifiers are present in the pages as served. Whether each one fires, and which property it reports to, is settled in the accounts."
+      },
+      "call_handling": {
+        "state": "not_observed_in_scope",
+        "tools": [],
+        "note": "No call handling script was recognised in the pages and conditions tested. Whether calls are recorded, and against which source, is settled inside the phone system, not from the page.",
+        "next": "Ask which system receives the calls and what it records.",
+        "access": "private_access_required"
+      },
+      "lead_destination": {
+        "state": "unverified",
+        "tools": [],
+        "note": "Where a submitted form lands is not visible from a page: the destination is set on the server or inside the form plugin.",
+        "next": "Confirm the destination of each form, and the field that would carry the source.",
+        "access": "private_access_required"
+      },
+      "google_listing": {
+        "state": "unverified",
+        "published_links": [],
+        "listings": [],
+        "note": "This site publishes no link to a listing. Which listings belong to this brand, and to which establishment, is not decidable from public pages.",
+        "next": "Confirm the listings each establishment owns, from the business profile account."
+      },
+      "local_services_ads": {
+        "state": "private_access_required",
+        "note": "Whether a brand runs Local Services Ads, and what those leads cost, is readable in the advertising account. A public page does not carry it.",
+        "next": "Read-only access to the advertising account for one brand."
+      },
+      "link_to_verify": [
+        {
+          "id": "ua_active",
+          "short": "Historical UA identifier: is anything still collecting?",
+          "text": "Historical Universal Analytics identifier observed (UA-7654321-9). Whether anything still collects behind it is to verify."
+        },
+        {
+          "id": "form_path",
+          "short": "Where does a submitted form go?",
+          "text": "Form destination not visible from the page. Confirm where a submitted form goes."
+        },
+        {
+          "id": "call_path",
+          "short": "Where do calls land, and what is recorded?",
+          "text": "No call handling script recognised. Confirm where calls land and what the phone system records."
+        }
+      ],
+      "next_check": {
+        "short": "Confirm destinations in the accounts",
+        "text": "Confirm destinations in the accounts that own these identifiers.",
+        "access": "read-only access"
+      },
+      "evidence": {
+        "ga4": [],
+        "universal_analytics": [
+          {
+            "value": "UA-7654321-9",
+            "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+            "method": "html",
+            "snippet": "…google-analytics.com/analytics.js','ga'); ga('create','UA-7654321-9','auto');</script> </head><body> <h1>South Brand Movin…"
+          }
+        ],
+        "gtm": [],
+        "google_ads": [],
+        "call_handling": [],
+        "forms": [
+          {
+            "value": "Contact Form 7",
+            "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+            "method": "html",
+            "snippet": "…>7 Example Street, Testville, MA 02102</p> <div class=\"wpcf7-form\"><form><input name=\"email\"><button>Send</button></form…"
+          }
+        ],
+        "lead_destination": [],
+        "chat": [],
+        "phones": [
+          {
+            "value": "(555) 020-0002",
+            "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+            "method": "tel: link",
+            "snippet": "…An invented moving brand. Nothing here is real.</p> <p><a href=\"tel:15550200002\">(555) 020-0002</a></p> <p>7 Example Street, Testville,…",
+            "click_to_call": true
+          }
+        ],
+        "addresses": [
+          {
+            "value": "7 Example Street, Testville, MA 02102",
+            "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+            "method": "visible text",
+            "snippet": "…ted moving brand. Nothing here is real. (555) 020-0002 7 Example Street, Testville, MA 02102 Send Contact us",
+            "parts": {
+              "street": "7 Example Street",
+              "locality": "Testville",
+              "region": "MA",
+              "postal_code": "02102"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "slug": "west-brand",
+      "name": "West Brand Relocation",
+      "market": "Testville, MA",
+      "url": "http://127.0.0.1:8123/west-brand/index.html",
+      "site": "http://127.0.0.1:8123/west-brand/index.html",
+      "state": "observed",
+      "scanned_at": "2026-09-15T14:50:56.573Z",
+      "pages_scanned": 2,
+      "read_as": "html as served",
+      "establishments": {
+        "state": "observed",
+        "postal_addresses": [
+          "3 Placeholder Lane, Testville, MA 02103"
+        ],
+        "sites": [
+          "http://127.0.0.1:8123/west-brand/index.html"
+        ],
+        "note": "Postal addresses printed on the pages read. How many establishments the brand operates is not decidable from these pages."
+      },
+      "lead_entry_points": {
+        "state": "observed",
+        "kinds": [
+          "phone"
+        ],
+        "forms": [],
+        "chat": [],
+        "phone_numbers": [
+          "(555) 020-0003"
+        ],
+        "summary": "phone",
+        "note": "The ways a lead can start on the pages read. Each one has to be followed to the system that receives it."
+      },
+      "measurement": {
+        "state": "not_observed_in_scope",
+        "observed": [],
+        "summary": "No recognised measurement ID",
+        "note": "No recognised measurement identifier appeared in the pages and conditions tested. A consent banner can hold tags back before any interaction, so this is a bounded observation, not a statement about the brand."
+      },
+      "call_handling": {
+        "state": "not_observed_in_scope",
+        "tools": [],
+        "note": "No call handling script was recognised in the pages and conditions tested. Whether calls are recorded, and against which source, is settled inside the phone system, not from the page.",
+        "next": "Ask which system receives the calls and what it records.",
+        "access": "private_access_required"
+      },
+      "lead_destination": {
+        "state": "unverified",
+        "tools": [],
+        "note": "Where a submitted form lands is not visible from a page: the destination is set on the server or inside the form plugin.",
+        "next": "Confirm the destination of each form, and the field that would carry the source.",
+        "access": "private_access_required"
+      },
+      "google_listing": {
+        "state": "unverified",
+        "published_links": [],
+        "listings": [],
+        "note": "This site publishes no link to a listing. Which listings belong to this brand, and to which establishment, is not decidable from public pages.",
+        "next": "Confirm the listings each establishment owns, from the business profile account."
+      },
+      "local_services_ads": {
+        "state": "private_access_required",
+        "note": "Whether a brand runs Local Services Ads, and what those leads cost, is readable in the advertising account. A public page does not carry it.",
+        "next": "Read-only access to the advertising account for one brand."
+      },
+      "link_to_verify": [
+        {
+          "id": "no_tag_in_scope",
+          "short": "Nothing recognised in scope: consent gate, or none deployed?",
+          "text": "No recognised measurement ID in the pages and conditions tested. Confirm whether a consent gate holds tags back, or whether none is deployed."
+        },
+        {
+          "id": "form_path",
+          "short": "Where does a submitted form go?",
+          "text": "Form destination not visible from the page. Confirm where a submitted form goes."
+        },
+        {
+          "id": "call_path",
+          "short": "Where do calls land, and what is recorded?",
+          "text": "No call handling script recognised. Confirm where calls land and what the phone system records."
+        }
+      ],
+      "next_check": {
+        "short": "Re-read with consent given",
+        "text": "Re-read with a consent choice made, then ask what is deployed.",
+        "access": "public re-run, then a question"
+      },
+      "evidence": {
+        "ga4": [],
+        "universal_analytics": [],
+        "gtm": [],
+        "google_ads": [],
+        "call_handling": [],
+        "forms": [],
+        "lead_destination": [],
+        "chat": [],
+        "phones": [
+          {
+            "value": "(555) 020-0003",
+            "evidence_url": "http://127.0.0.1:8123/west-brand/index.html",
+            "method": "tel: link",
+            "snippet": "…ervation looks like when nothing is recognised.</p> <p><a href=\"tel:15550200003\">(555) 020-0003</a></p> <p>3 Placeholder Lane, Testville…",
+            "click_to_call": true
+          }
+        ],
+        "addresses": [
+          {
+            "value": "3 Placeholder Lane, Testville, MA 02103",
+            "evidence_url": "http://127.0.0.1:8123/west-brand/index.html",
+            "method": "visible text",
+            "snippet": "…looks like when nothing is recognised. (555) 020-0003 3 Placeholder Lane, Testville, MA 02103 Contact",
+            "parts": {
+              "street": "3 Placeholder Lane",
+              "locality": "Testville",
+              "region": "MA",
+              "postal_code": "02103"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

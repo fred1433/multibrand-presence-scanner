@@ -1,0 +1,9 @@
+{
+  "group": "Invented Group (fictional)",
+  "scope_note": "Three invented brands served from fixtures/sites, so the scanner can be run end to end by anyone, offline, without reading anybody's real pages.",
+  "brands": [
+    { "slug": "north-brand", "name": "North Brand Movers", "market": "Testville, MA", "url": "http://127.0.0.1:8123/north-brand/index.html" },
+    { "slug": "south-brand", "name": "South Brand Moving and Storage", "market": "Testville, MA", "url": "http://127.0.0.1:8123/south-brand/index.html" },
+    { "slug": "west-brand", "name": "West Brand Relocation", "market": "Testville, MA", "url": "http://127.0.0.1:8123/west-brand/index.html" }
+  ]
+}

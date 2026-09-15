@@ -1,0 +1,114 @@
+{
+  "slug": "south-brand",
+  "name": "South Brand Moving and Storage",
+  "market": "Testville, MA",
+  "url": "http://127.0.0.1:8123/south-brand/index.html",
+  "scanned_at": "2026-09-15T14:50:56.572Z",
+  "scanner_version": "2.0.0",
+  "state": "observed",
+  "pages": [
+    {
+      "requested_url": "http://127.0.0.1:8123/south-brand/index.html",
+      "url": "http://127.0.0.1:8123/south-brand/index.html",
+      "status": 200,
+      "redirect_chain": [
+        {
+          "url": "http://127.0.0.1:8123/south-brand/index.html",
+          "status": 200,
+          "ms": 12
+        }
+      ],
+      "bytes": 620,
+      "source": "html as served",
+      "visible_text_chars": 190,
+      "fetched_at": "2026-09-15T14:50:56.584Z",
+      "note": "The served HTML carries almost no text, so this page builds itself in the browser. It was read without one in this run."
+    },
+    {
+      "requested_url": "http://127.0.0.1:8123/contact/",
+      "url": "http://127.0.0.1:8123/contact/",
+      "status": 404,
+      "redirect_chain": [
+        {
+          "url": "http://127.0.0.1:8123/contact/",
+          "status": 404,
+          "ms": 6
+        }
+      ],
+      "bytes": 39,
+      "source": "html as served",
+      "visible_text_chars": 9,
+      "fetched_at": "2026-09-15T14:50:56.590Z",
+      "note": "The served HTML carries almost no text, so this page builds itself in the browser. It was read without one in this run."
+    }
+  ],
+  "pages_scanned": 2,
+  "tags": {
+    "universal_analytics": {
+      "id": "universal_analytics",
+      "label": "Universal Analytics identifier",
+      "category": "measurement",
+      "historical": true,
+      "ids": [
+        "UA-7654321-9"
+      ],
+      "findings": [
+        {
+          "value": "UA-7654321-9",
+          "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+          "method": "html",
+          "snippet": "…google-analytics.com/analytics.js','ga'); ga('create','UA-7654321-9','auto');</script> </head><body> <h1>South Brand Movin…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/south-brand/index.html"
+      ]
+    },
+    "contact_form_7": {
+      "id": "contact_form_7",
+      "label": "Contact Form 7",
+      "category": "form",
+      "historical": false,
+      "ids": [
+        "Contact Form 7"
+      ],
+      "findings": [
+        {
+          "value": "Contact Form 7",
+          "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+          "method": "html",
+          "snippet": "…>7 Example Street, Testville, MA 02102</p> <div class=\"wpcf7-form\"><form><input name=\"email\"><button>Send</button></form…"
+        }
+      ],
+      "pages": [
+        "http://127.0.0.1:8123/south-brand/index.html"
+      ]
+    }
+  },
+  "nap": {
+    "phones": [
+      {
+        "value": "(555) 020-0002",
+        "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+        "method": "tel: link",
+        "snippet": "…An invented moving brand. Nothing here is real.</p> <p><a href=\"tel:15550200002\">(555) 020-0002</a></p> <p>7 Example Street, Testville,…",
+        "click_to_call": true
+      }
+    ],
+    "addresses": [
+      {
+        "value": "7 Example Street, Testville, MA 02102",
+        "evidence_url": "http://127.0.0.1:8123/south-brand/index.html",
+        "method": "visible text",
+        "snippet": "…ted moving brand. Nothing here is real. (555) 020-0002 7 Example Street, Testville, MA 02102 Send Contact us",
+        "parts": {
+          "street": "7 Example Street",
+          "locality": "Testville",
+          "region": "MA",
+          "postal_code": "02102"
+        }
+      }
+    ]
+  },
+  "profile_links": {}
+}

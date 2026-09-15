@@ -1,0 +1,7 @@
+[
+  { "call_id": "C-9001", "at": "2026-09-01T15:22:00Z", "direction": "inbound",  "from": "(555) 010-1002", "to": "(555) 020-0001", "lead_id": "L-1002" },
+  { "call_id": "C-9002", "at": "2026-09-01T18:05:00Z", "direction": "outbound", "from": "(555) 020-0001", "to": "(555) 010-1002", "purpose": "follow-up" },
+  { "call_id": "C-9003", "at": "2026-09-02T10:02:00Z", "direction": "outbound", "from": "(555) 020-0002", "to": "(555) 010-1003", "purpose": "reminder" },
+  { "call_id": "C-9004", "at": "2026-09-03T11:31:00Z", "direction": "inbound",  "from": "(555) 010-1005", "to": "(555) 020-0003", "lead_id": "L-1005" },
+  { "call_id": "C-9005", "at": "2026-09-04T09:15:00Z", "direction": "inbound",  "from": "(555) 010-9999", "to": "(555) 020-0001" }
+]

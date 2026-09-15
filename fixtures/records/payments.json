@@ -1,0 +1,5 @@
+[
+  { "payment_id": "P-3001", "booking_id": "B-2001", "amount": 1840.00, "at": "2026-09-07T10:00:00Z" },
+  { "payment_id": "P-3002", "booking_id": "B-2002", "amount": 3120.50, "at": "2026-09-08T11:15:00Z" },
+  { "payment_id": "P-3003", "booking_id": "B-2005", "amount": 980.00,  "at": "2026-09-09T09:40:00Z" }
+]

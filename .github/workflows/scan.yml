@@ -1,0 +1,38 @@
+name: scan
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Every Monday at 06:00 UTC.
+    - cron: "0 6 * * 1"
+
+jobs:
+  check:
+    name: tests, scan and reconciliation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+      - run: npm ci --omit=optional
+
+      - name: unit tests
+        run: npm test
+
+      - name: read the fixture sites and reconcile the fictional records
+        run: npm run demo
+
+      - name: check the output is complete and every state is a declared one
+        run: node scripts/check-output.mjs data
+
+      - name: publish the JSON
+        uses: actions/upload-artifact@v5
+        with:
+          name: run-${{ github.run_number }}
+          path: data/
+          if-no-files-found: error

@@ -1,0 +1,7 @@
+[
+  { "lead_id": "L-1001", "created_at": "2026-09-01T13:04:00Z", "entry_brand": "north-brand", "channel": "form",  "campaign": "local-search", "contact": { "name": "Fictional Lead A", "phone": "(555) 010-1001" } },
+  { "lead_id": "L-1002", "created_at": "2026-09-01T15:22:00Z", "entry_brand": "north-brand", "channel": "phone", "campaign": "unknown",      "contact": { "name": "Fictional Lead B", "phone": "(555) 010-1002" } },
+  { "lead_id": "L-1003", "created_at": "2026-09-02T09:10:00Z", "entry_brand": "south-brand", "channel": "form",  "campaign": "paid-search",  "contact": { "name": "Fictional Lead C", "phone": "(555) 010-1003" } },
+  { "lead_id": "L-1004", "created_at": "2026-09-02T17:48:00Z", "entry_brand": "south-brand", "channel": "chat",  "campaign": "local-search", "contact": { "name": "Fictional Lead D", "phone": "(555) 010-1004" } },
+  { "lead_id": "L-1005", "created_at": "2026-09-03T11:31:00Z", "entry_brand": "west-brand",  "channel": "phone", "campaign": "paid-search",  "contact": { "name": "Fictional Lead E", "phone": "(555) 010-1005" } }
+]
